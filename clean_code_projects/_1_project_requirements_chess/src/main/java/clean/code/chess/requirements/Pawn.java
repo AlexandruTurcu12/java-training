@@ -44,7 +44,52 @@ public class Pawn {
     }
 
     public void Move(MovementType movementType, int newX, int newY) {
-        throw new UnsupportedOperationException("Need to implement Pawn.Move()");
+
+        if(getPieceColor() == PieceColor.BLACK && getYCoordinate() == 6) {
+            if(newX != getXCoordinate()){
+                newX = getXCoordinate();
+                newY = getYCoordinate();
+            } else {
+                setYCoordinate(4);
+                newX = getXCoordinate();
+                newY = getYCoordinate();
+            }
+        }
+        else if(getPieceColor() == PieceColor.BLACK && getYCoordinate() < 6){
+            if(newX != getXCoordinate()){
+                newX = getXCoordinate();
+                newY = getYCoordinate();
+            } else {
+                int value = getYCoordinate();
+                value--;
+                setYCoordinate(value);
+                newX = getXCoordinate();
+                newY = getYCoordinate();
+            }
+        }
+
+        if(getPieceColor() == PieceColor.WHITE && getYCoordinate() == 1) {
+            if(newX != getXCoordinate()){
+                newX = getXCoordinate();
+                newY = getYCoordinate();
+            } else {
+                setYCoordinate(3);
+                newX = getXCoordinate();
+                newY = getYCoordinate();
+            }
+        }
+        else if(getPieceColor() == PieceColor.WHITE && getYCoordinate() > 1){
+            if(newX != getXCoordinate()){
+                newX = getXCoordinate();
+                newY = getYCoordinate();
+            } else {
+                int value = getYCoordinate();
+                value++;
+                setYCoordinate(value);
+                newX = getXCoordinate();
+                newY = getYCoordinate();
+            }
+        }
     }
 
     @Override
